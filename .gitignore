@@ -1,0 +1,36 @@
+# Ignore Python virtual environments
+venv/
+
+# Ignore model weights and checkpoints
+model/*.pt
+model/*.pth
+model/*.bin
+model/checkpoints/
+
+# Ignore large datasets
+*.csv
+*.json
+*.xlsx
+data/*.csv
+data/*.json
+data/*.xlsx
+data/raw/
+
+# Ignore Streamlit cache
+.streamlit/
+
+# Ignore OS and editor files
+*.log
+*.DS_Store
+Thumbs.db
+__pycache__/
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Docker build artifacts
+docker/*.tar
+docker/*.img
+
+# Ignore test outputs
+tests/output/
