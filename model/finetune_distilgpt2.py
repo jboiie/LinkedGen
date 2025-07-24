@@ -62,7 +62,3 @@ trainer = Trainer(
 )
 
 trainer.train()
-
-model.save_pretrained(MODEL_OUT)
-tokenizer.save_pretrained(MODEL_OUT)
-print(f"Model and tokenizer saved to {MODEL_OUT}")
