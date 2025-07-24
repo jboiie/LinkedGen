@@ -1,5 +1,12 @@
+
+# Core dependencies
 streamlit
-transformers
-torch
 pandas
+torch
+transformers
+datasets
+optuna
 scikit-learn
+matplotlib
+seaborn
+notebook
