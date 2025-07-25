@@ -1,5 +1,6 @@
 
 # LinkedGen: AI-powered LinkedIn Post Generator
+### LinkedGen is a full-stack, AI-powered application designed to generate human-like, professional LinkedIn posts from user input. Built entirely with open-source components, it leverages a fine-tuned language model (DistilGPT2) to create content based on a user's specific scenario and desired tone. This project serves as a practical exercise in building and deploying a complete AI product, developing a wide range of skills across the machine learning lifecycle.
 
 ## Project Structure
 - `app/` – Streamlit UI and app logic
