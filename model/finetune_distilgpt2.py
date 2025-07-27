@@ -33,7 +33,11 @@ df['prompt'] = df.apply(build_prompt, axis=1)
 # Prepare Hugging Face dataset
 dataset = Dataset.from_pandas(df[['prompt']])
 
+
 tokenizer = AutoTokenizer.from_pretrained('distilgpt2')
+# Fix: Set pad_token to eos_token if not present
+if tokenizer.pad_token is None:
+    tokenizer.pad_token = tokenizer.eos_token
 
 def tokenize_function(examples):
     return tokenizer(examples['prompt'], truncation=True, padding='max_length', max_length=128)

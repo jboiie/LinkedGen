@@ -28,7 +28,11 @@ df_val['prompt'] = df_val.apply(build_prompt, axis=1)
 dataset_train = Dataset.from_pandas(df_train[['prompt']])
 dataset_val = Dataset.from_pandas(df_val[['prompt']])
 
+
 tokenizer = AutoTokenizer.from_pretrained('distilgpt2')
+# Fix: Set pad_token to eos_token if not present
+if tokenizer.pad_token is None:
+    tokenizer.pad_token = tokenizer.eos_token
 
 def tokenize_function(examples):
     return tokenizer(examples['prompt'], truncation=True, padding='max_length', max_length=128)
