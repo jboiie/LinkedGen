@@ -1,17 +1,9 @@
 # Ignore Python virtual environments
 venv/
 
-# Ignore model weights and checkpoints
-model/*.pt
-model/*.pth
-model/*.bin
-model/checkpoints/
-
 # Ignore large datasets
-*.csv
 *.json
 *.xlsx
-data/*.csv
 data/*.json
 data/*.xlsx
 data/raw/
