@@ -51,7 +51,7 @@ def objective(trial):
         num_train_epochs=num_train_epochs,
         per_device_train_batch_size=batch_size,
         per_device_eval_batch_size=batch_size,
-        evaluation_strategy="epoch",
+        # evaluation_strategy="epoch",  # Removed unsupported argument
         save_strategy="no",
         learning_rate=learning_rate,
         report_to="none",
