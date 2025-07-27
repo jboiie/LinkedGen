@@ -1,15 +1,5 @@
 """
 Hyperparameter tuning for distilGPT2 using Optuna and validation split.
-
-Required packages:
-- torch
-- transformers
-- datasets
-- pandas
-- optuna
-
-Install with:
-    pip install torch transformers datasets pandas optuna
 """
 
 import os
@@ -59,9 +49,9 @@ def objective(trial):
         per_device_eval_batch_size=batch_size,
         evaluation_strategy="epoch",
         save_strategy="no",
-        learning_rate=learning_rate,
-        fp16=torch.cuda.is_available(),
+        learning_rate=learning_rate,,
         report_to="none",
+        fp16=False,
         logging_steps=100
     )
     trainer = Trainer(
@@ -76,7 +66,7 @@ def objective(trial):
     return eval_results["eval_loss"]
 
 study = optuna.create_study(direction="minimize")
-study.optimize(objective, n_trials=10)
+study.optimize(objective, n_trials=5)
 
 print("Best trial:")
 trial = study.best_trial
