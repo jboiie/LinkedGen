@@ -49,7 +49,7 @@ def objective(trial):
         per_device_eval_batch_size=batch_size,
         evaluation_strategy="epoch",
         save_strategy="no",
-        learning_rate=learning_rate,,
+        learning_rate=learning_rate,
         report_to="none",
         fp16=False,
         logging_steps=100
