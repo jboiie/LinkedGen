@@ -35,7 +35,9 @@ if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token
 
 def tokenize_function(examples):
-    return tokenizer(examples['prompt'], truncation=True, padding='max_length', max_length=128)
+    tokens = tokenizer(examples['prompt'], truncation=True, padding='max_length', max_length=128)
+    tokens["labels"] = tokens["input_ids"].copy()
+    return tokens
 
 tokenized_train = dataset_train.map(tokenize_function, batched=True)
 tokenized_val = dataset_val.map(tokenize_function, batched=True)
