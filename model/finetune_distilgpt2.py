@@ -50,12 +50,12 @@ model = AutoModelForCausalLM.from_pretrained('distilgpt2')
 
 training_args = TrainingArguments(
     output_dir=MODEL_OUT,
-    num_train_epochs=3,
-    per_device_train_batch_size=4,
+    num_train_epochs=4,  # from best trial
+    per_device_train_batch_size=8,  # from best trial
     save_steps=500,
     save_total_limit=2,
     logging_steps=100,
-    learning_rate=5e-5,
+    learning_rate=0.0002255233636894206,  # best trail LR
     fp16=torch.cuda.is_available(),
     report_to="none"
 )
