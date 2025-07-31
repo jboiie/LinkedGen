@@ -1,15 +1,3 @@
-"""
-Fine-tune distilGPT2 on train.csv for LinkedIn post generation.
-
-Required packages:
-- torch
-- transformers
-- datasets
-- pandas
-
-Install with:
-    pip install torch transformers datasets pandas
-"""
 
 import os
 import pandas as pd
