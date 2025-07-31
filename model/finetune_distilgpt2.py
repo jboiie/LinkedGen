@@ -7,7 +7,7 @@ import torch
 
 # Paths
 TRAIN_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'train.csv')
-MODEL_OUT = os.path.join(os.path.dirname(__file__), 'distilgpt2-finetuned')
+MODEL_OUT = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'models', 'distilgpt2-finetuned')
 
 # Load data
 df = pd.read_csv(TRAIN_PATH, names=["text", "category", "tone"], header=None)
@@ -56,3 +56,8 @@ trainer = Trainer(
 )
 
 trainer.train()
+
+# Save the fine-tuned model and tokenizer
+model.save_pretrained(MODEL_OUT)
+tokenizer.save_pretrained(MODEL_OUT)
+print(f"Model and tokenizer saved to {MODEL_OUT}")
